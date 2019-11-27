@@ -1,0 +1,199 @@
+<?php
+    include 'header.php';
+?>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- style slick -->
+    <link rel="stylesheet" href="css/slick.css">
+	
+	<link rel="stylesheet" href="css/slick-theme.css">
+	
+	
+	<link rel="stylesheet" href="css/animate.css">
+    <!--<link rel="stylesheet" href="css/main.css">-->
+	
+</head>
+<main class="container">
+  <div class="row">
+	  <div  class="col">
+	  </div>
+  </div>
+  <div class="row">
+    <article class="col-sm col-md-8">
+        <div id="content" role="main">
+			</br>
+			<section>
+	<div class="single-item">
+	
+	  <div>
+		Знаходження невідомої сторони прямокутного трикутника<br>
+Сторона А
+<input name="number" id="you_num">
+
+Сторона B
+<input name="number" id="you_num1">
+
+
+<button id="input_num">Розрахувати</button>
+<br>
+<br>
+
+<label class="paylabel" for="cardtype">Сторони є:</label>
+<select id="cardtype" name="cards">
+    <option value="2K">Двома катетами</option>
+    <option value="KAH">Катетом і гіпотенузою</option>
+</select><br/>
+<br>
+<div id="rez">
+</div>
+<script type="text/javascript">
+var hints = '';
+
+input_num.onclick = function() {
+        
+    var num1 = $('#you_num').val(); 
+	var num2 = $('#you_num1').val(); 
+	hints += "Сторона C"+ '<br>';
+	$('#rez').html(hints);
+	var card = document.getElementById("cardtype");
+	if(card.selectedIndex == 0) {
+		var side = Math.sqrt(Math.pow(num1,2) + Math.pow(num2,2));
+		hints += side + '<br>'; 
+		$('#rez').html(hints);
+	} else {
+		var side = Math.sqrt(Math.pow(num1,2) - Math.pow(num2,2));
+		hints += side +'<br>'; 
+		$('#rez').html(hints);
+	}
+	
+      
+    $('#rez').html(hints);
+   
+    
+   
+  }
+
+    </script>
+
+	  </div>
+	  <div>
+		Розв'язування квадратного рівняння.<br>
+<div style="text-align:left;">
+	<input id="oms_c1" size="2" tabindex="1" class="oms_input_int_right">
+	<span class="oms_formula">x</span><sup>2</sup>&nbsp;+&nbsp;
+	<input id="oms_c2" size="2" tabindex="2" class="oms_input_int_right">
+	<span class="oms_formula">x</span>&nbsp;+&nbsp;
+	<input id="oms_c3" size="2" tabindex="3" class="oms_input_int_right">&nbsp;=&nbsp;0
+	<p><input id="oms_nabor" onclick="oms_solve_qe()" type="button" value="Розв'язати квадратне рівняння" tabindex="4"></p>
+</div>
+
+Розвязок:
+<div id="rez1" >
+</div>
+<script type="text/javascript">
+var hints1 = '';
+
+oms_nabor.onclick = function() {
+        
+    var num1 = $('#oms_c1').val(); 
+	var num2 = $('#oms_c2').val(); 
+	var num3 = $('#oms_c3').val(); 
+	hints1 += num1 + "x2" + " + " + num2 + "x" + " + " + num3 + '<br>';
+	$('#rez1').html(hints1);
+	
+	var D = Math.pow(num2,2) - 4*num1*num3;
+	hints1 += D + "<br>";
+	$('#rez1').html(hints1);
+	if(D<0){
+		hints1+="Так як дискримінант менше нуля, то рівняння не має дійсних коренів. " + '<br>';
+		$('#rez1').html(hints1);
+	} else if(D==0){
+		var x1 = (-num2 + D)/(num1 * 2);
+		hints+= "Так як дискримінант дорівнює нулю то, квадратні рівняння має один дійсний корінь:"+ '<br>';
+		$('#rez1').html(hints1);
+		hints1+= x1 + '<br>';
+		$('#rez1').html(hints1);
+	} else {
+		hints1+= "Так як дискримінант більше нуля то, квадратне рівняння має два дійсних кореня:"+ '<br>';
+		$('#rez1').html(hints1);
+		var x1 = (-num2 + D)/(num1 * 2);
+		hints1+= "x1 = " + x1 + '<br>';
+		$('#rez1').html(hints1);
+		var x2 = (-num2 - D)/(num1 * 2);
+		hints1+= "x2 = "+ x2 + '<br>';
+		$('#rez1').html(hints1);
+	}
+   
+  }
+
+</script>
+	  </div>
+	  <div>
+		<p>Табулювання функції</p>
+
+<button onclick="myFunction()">Розпочати</button>
+<div id="rez2" >
+</div>
+
+<script>
+var hints2 = ' ';
+function myFunction() {
+	var x = document.createElement("TABLE");
+	x.setAttribute("id", "myTable");
+	document.body.appendChild(x);
+	
+	for(var i = 0; i <= 5; i=i+0.5){
+		var table = document.getElementById("myTable");
+		var row = table.insertRow(0);
+		//var cell1 = row.insertCell(0);
+		//var cell2 = row.insertCell(1);
+		var vrb = Math.pow(Math.cos(i),2) + Math.pow(i,3);
+		//cell1.innerHTML = i;
+		//cell2.innerHTML = vrb.toFixed(2);
+		hints2 += i + ' - ' + vrb.toFixed(2) + '<br>';
+		$('#rez2').html(hints2);
+	}
+	
+	
+	
+
+}
+
+</script>
+	  </div>
+	</div>
+</section>
+			
+		</div>
+    </article>
+    <aside class="col-sm col-md-4">
+     <?php
+    include 'sidebar.php';
+?>
+    </aside>
+  </div>
+</main>
+
+
+<?php
+    include 'footer.php';
+?>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+	<script src="js/jquery-3.3.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+	<script src="js/slick.js"></script>
+	<script src="js/wow.min.js"></script>
+    <script src="js/main2.js"></script>
+  </body>
+</html>

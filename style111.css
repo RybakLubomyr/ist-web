@@ -1,0 +1,201 @@
+/* GENERAL STYLES */
+body {
+	font-family: Arial, San-Serif;
+	font-size: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+p {
+	font-size: 15px;
+	line-height: 1.3em;
+}
+
+
+.container {
+	width: 100%;
+}
+/* HEADER */
+.ul-header{
+	margin: 0;
+	padding: 0;
+}
+.header {
+	padding:20px 0;
+	background-color: #222;
+}
+.header h1,
+.header h2 {
+	color: yellowgreen;
+	text-align: center;
+}
+/* NAVIGATION */
+.navigation-li{
+	list-style-type: none;
+}
+.page-navigation {
+	background-color: #222;
+	border-color: #101010;
+	min-height: 50px;
+}
+.page-navigation li {
+	float: left;
+	width: 150px;
+}
+.page-navigation a {
+	display: block;
+	color: #9d9d9d;
+	line-height: 15px;
+	font-weight: bold;
+	text-align: center;
+}
+.page-navigation li a:hover {
+	color: yellowgreen;
+}
+/*__Index__*/
+.index{color:white;}
+/*__History__*/
+.history{color:white;}
+/*__Software__*/
+.software{color:white;}
+
+
+/* MAIN PART */
+.dovidka-photo{
+	text-align:center;
+}
+
+.dovidka-form{
+	border-collapse: separate; 
+	margin-left: 10px;
+	width:15%;
+}
+.Rozdil{
+	text-align:left;
+}
+.logo {
+    display: block;
+    text-align: center;
+    width: auto;
+}
+.content-menu-form{
+	border-color: black;
+}
+
+.zmist{
+	padding-top:15px;
+}
+
+ .photo {
+    padding: 10px; 
+	margin-left: 10px;
+    margin-bottom: 10px; 
+    outline: 1px solid #666;
+    background: #f0f0f0;
+    float: right; 
+	width:222px;
+ }
+
+#name{
+	font-size: 20px;
+	text-align:center;
+	color:#9d9d9d;
+	vertical-align:top;
+	padding-top:15px;
+}
+.th1{
+	font-size:12px;
+	text-align:left; 
+	vertical-align:top
+}
+.th2{
+	font-size:12px;
+	text-align:left;
+}
+.li1{
+	font-size:16px;
+}
+.ol1 {
+list-style: none; 
+counter-reset: li; 
+}
+.li1:before {
+counter-increment: li; 
+content: counters(li,".") ". "; 
+}
+
+/* FOOTER */
+.container_footer{
+	margin-left: 25px;
+	margin: 0 auto;
+	width: 100%;
+	
+}
+.container_footer a{
+	color: white;
+	text-align:center;
+}
+.container_footer a:hover{
+	color: yellowgreen;
+}
+.footer {
+	background-color: #222;
+	color: yellow;
+	padding: 35px 35px 35px 45%;
+	margin-top: 10px;
+}
+
+@media only screen and (max-width: 600px) {
+body{
+	font-size:150%;
+	position:relative;
+}
+main{
+	position:relative;
+}
+footer{
+	position:absolute;
+	top:115%;
+	width:100%;
+	text-align:left;
+}
+p{
+	font-size: 17px;
+}
+.content-menu-form{
+	width:85%
+}
+.page-navigation {
+	min-height: 85px;
+}
+.page-navigation li {
+	float: none;
+	width: 100%;
+}
+.page-navigation a {
+	line-height: 20px;
+}
+.dovidka{
+	position:absolute;
+	top:100%;
+	right:200px;
+	width:50%;
+}
+.dovidka-form{ 
+	position:absolute; 
+	right:60%; 
+	width:20%
+}
+
+.th1{
+	font-size:16px;
+	text-align:left; 
+	vertical-align:top
+	}
+.th2{
+	font-size:16px;
+	text-align:left;
+}
+
+}
